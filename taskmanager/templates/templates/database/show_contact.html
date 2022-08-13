@@ -1,0 +1,24 @@
+{% extends 'templates/base.html' %}
+{% block content %}
+
+    <div class="card w-50">
+        <div class="card-body">
+          <h5 class="card-title">contact.name</h5>
+          <ul>
+            <li>contact.city</li>
+            <li>contact.county</li>
+            <li>contact.street_name</li>
+            <li>contact.street_number</li>
+            <li>contact.floor</li>
+            <li>contact.building_info</li>
+            <li>contact.apartment_number</li>
+            <li>contact.zip_code</li>
+            <li>contact.phone</li>
+            <li>contact.web</li>
+            <li>contact.email_address</li>
+          </ul>
+          <a href="{% url 'update-contact' contact.id %}" class="btn btn-outline-secondary btn-sm">Update Contact</a>
+          <a href="{% url 'delete-contact' contact.id %}" class="btn btn-outline-danger btn-sm">Delete Contact</a>
+        </div>
+      </div>
+{% endblock %}

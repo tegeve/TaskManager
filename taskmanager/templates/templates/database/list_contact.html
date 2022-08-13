@@ -1,0 +1,26 @@
+{% extends 'templates/base.html' %}
+{% block content %}<br/><br/><br/><br/>
+{% for contact in list_contact %}
+    <a class="nav-link" href=" {% url 'list-contact' %}">Contact List</a>
+    <div class="card w-50">
+        <div class="card-body">
+          <h5 class="card-title">{{contact.name}}</h5>
+          <ul>
+            <li>City: {{contact.city}}</li>
+            <li>County: {{contact.county}}</li>
+            <li>Street Name: {{contact.street_name}}</li>
+            <li>Street Number: {{contact.street_number}}</li>
+            <li>Floor: {{contact.floor}}</li>
+            <li>Building Info: {{contact.building_info}}</li>
+            <li>Apartment Number: {{contact.apartment_number}}</li>
+            <li>Zip Code: {{contact.zip_code}}</li>
+            <li>Contact Phone: {{contact.phone}}</li>
+            <li>Contact WEB: {{contact.web}}</li>
+            <li>Email Address: {{contact.email_address}}</li>
+          </ul>
+          <a href="{% url 'update-contact' contact.id %}" class="btn btn-outline-secondary btn-sm">Update Contact</a>
+          <a href="{% url 'delete-contact' contact.id %}" class="btn btn-outline-danger btn-sm">Delete Contact</a>
+        </div>
+      </div>
+{% endfor %}
+{% endblock %}
